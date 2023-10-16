@@ -1,0 +1,25 @@
+server:
+  port: 8711
+spring:
+  application:
+    name: ms-producto
+  datasource:
+    url: jdbc:postgresql://localhost:5432/productodb
+    username: postgres
+    password: adsad
+#Se cambia el ms-producto_db y la contraseña como se debe dependiendo la bdd
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8705/eureka/
