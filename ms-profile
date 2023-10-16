@@ -1,0 +1,37 @@
+server:
+  port: 7002
+
+spring:
+  application:
+    name: ms-profile
+  datasource:
+    type: org.postgresql.jdbc2.optional.SimpleDataSource
+    username: postgres
+    password: jose
+    #password: admin1234
+    url: jdbc:postgresql://localhost:5433/TinderDB
+    
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      
+#    security:
+#      oauth2:
+#        resource-server:
+#           jwt:
+#             issuer-uri: http://keycloak:8090/realms/tinder
+#             jwk-set-uri: http://keycloak:8090/realms/tinder/protocol/openid-connect/certs
+#
+#    loggin:
+#        level:
+#          org.springframework.security: DEBUG
+#    token:
+#      converter:
+#        principal-attribute: preferred_username
+#        resource-id: tinder-backend-profile
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7000/eureka/
