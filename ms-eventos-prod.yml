@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ms-eventos
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Arquitectura_Soundcloud
+    username: postgres
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+server:
+  port: 8807
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8715/eureka/
